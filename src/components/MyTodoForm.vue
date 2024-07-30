@@ -21,6 +21,37 @@ methods: {
 }
 }
 </script>
+<!-- 
+<template>
+  <form class="myForm" @submit="addTodo">
+    <input 
+      name="taskTodo" 
+      class="formInput" 
+      v-model="taskTodo" 
+      placeholder="Add a new todo..." 
+      required 
+    />
+    <button class="formBtn" type="submit">Add</button>
+  </form>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      taskTodo: ''
+    }
+  },
+  methods: {
+    addTodo(e) {
+      e.preventDefault();
+      this.$store.dispatch('addTodoToServer', this.taskTodo);
+      this.taskTodo = '';
+    }
+  }
+}
+</script> -->
+
 
 <style scoped>
 .myForm {

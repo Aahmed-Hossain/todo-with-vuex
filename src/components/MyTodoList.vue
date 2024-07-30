@@ -31,7 +31,47 @@ methods: {
 }
 </script>
 
-
+<!-- <template>
+    <div>
+      <div class="todo-computed-list">
+        <div class="todo-computed-item" v-for="todo in mytodos" :key="todo.id">
+          <p :style="{ 'text-decoration': todo.isCompleted ? 'line-through' : 'none' }">{{ todo.title }}</p>
+          <input 
+            type="checkbox"  
+            class="check-box" 
+            name="todo.id" 
+            v-on:change="updateTodoCompletion(todo.id)" 
+            v-bind:checked="todo.isCompleted" 
+          />
+        </div>
+        <div>
+          <h4 class="todo-completed">You have completed: {{ todoComplete }} tasks.</h4>
+        </div>
+      </div>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    computed: {
+      mytodos() {
+        return this.$store.state.myTodoLists;
+      },
+      todoComplete() {
+        return this.$store.getters.finalTodosLength;
+      }
+    },
+    methods: {
+      updateTodoCompletion(todoId) {
+        this.$store.dispatch('toggleTodoCompletion', todoId);
+      }
+    },
+    created() {
+      this.$store.dispatch('fetchTodos');
+    }
+  }
+  </script> -->
+  
 
 
 
